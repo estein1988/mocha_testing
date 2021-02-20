@@ -28,14 +28,14 @@ it("It increments the age of the persons in the array", () => {
 })
 
 it("It increments the age of the persons in the array", () => {
-    const people = [{
-        age: 31,
-        age: 46,
-    }]
-    const agedPeople = [{
-        age: 32,
-        age: 47,
-    }]
+    const people = [
+        { name: 'Elliott', age: 31 },
+        { name: 'Jack', age: 29 }
+    ]
+    const agedPeople = [
+        { name: 'Elliott', age: 32 },
+        { name: 'Jack', age: 30 }
+    ]
 
     assert.deepStrictEqual(incrementAge(people), agedPeople)
 })
