@@ -5,22 +5,25 @@
 //4. mkdir test
 //5. touch test/app.spec.js
 //6. npx mocha
+//7. npm install chai
 
 const { sum, sumDecimal, incrementAge } = require("../app");
+const { expect } = require('chai')
 const assert = require("assert"); //don't use built-in assert library except for this lesson
 
-// console.log("It adds 2 and 3", sum(2, 3) === 5)
-
 it("It adds 2 and 3", () => {
-    assert.strictEqual(sum(2, 3), 5)
+    // assert.strictEqual(sum(2, 3), 5) //asset
+    expect(sum(2, 3)).to.equal(5) //chai
 })
 
 it("It adds the strings 2 and 3", () => {
-    assert.strictEqual(sum('2', '3'), '23')
+    // assert.strictEqual(sum('2', '3'), '23')
+    expect(sum('2', '3')).to.equal('23')
 })
 
 it("It adds 0.1 and 0.2", () => {
-    assert.strictEqual(sumDecimal(.1, .2), 0.3)
+    // assert.strictEqual(sumDecimal(.1, .2), 0.3)
+    expect(sumDecimal(.1, .2)).to.equal(0.3)
 })
 
 it("It increments the age of the persons in the array", () => {
